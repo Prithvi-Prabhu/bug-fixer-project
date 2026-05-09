@@ -145,7 +145,7 @@ def validate_env():
 
 # ── Header ─────────────────────────────────────────────────────────────────────
 
-st.markdown("## 🤖 Bug Fixer Agent")
+st.markdown("## Bug Fixer Agent")
 st.markdown(
     "<p style='color:#8b949e;font-size:14px;margin-top:-8px'>"
     "Paste a GitHub issue URL — the agent diagnoses the bug and generates a patch."
@@ -157,19 +157,17 @@ st.markdown("---")
 # ── Sidebar ────────────────────────────────────────────────────────────────────
 
 with st.sidebar:
-    st.markdown("###  Configuration")
+    st.markdown("### Configuration")
     st.caption("Model: `llama-3.3-70b-versatile`")
     st.markdown("---")
-    st.markdown("###  API Keys")
+    st.markdown("### 🔑 API Keys")
     st.caption("Set in your environment, or paste here.")
 
-    groq_key = st.text_input("GROQ_API_KEY", type="password",
-                              value=os.getenv("GROQ_API_KEY", ""))
+    groq_key = st.text_input("GROQ_API_KEY", type="password", placeholder="gsk_...")
     if groq_key:
         os.environ["GROQ_API_KEY"] = groq_key
 
-    github_token = st.text_input("GITHUB_TOKEN", type="password",
-                                  value=os.getenv("GITHUB_TOKEN", ""))
+    github_token = st.text_input("GITHUB_TOKEN", type="password", placeholder="ghp_...")
     if github_token:
         os.environ["GITHUB_TOKEN"] = github_token
 
@@ -223,7 +221,7 @@ except ImportError as e:
 # ── Agent run ──────────────────────────────────────────────────────────────────
 
 st.markdown("---")
-st.markdown("### Progress")
+st.markdown("### 📋 Progress")
 
 repo_dir = None
 try:
@@ -279,7 +277,7 @@ try:
         )
 
     st.download_button(
-        label="⬇ Download patch",
+        label="⬇️ Download patch",
         data=patch,
         file_name=f"fix-issue-{issue['number']}.diff",
         mime="text/plain",
