@@ -4,7 +4,7 @@ An AI agent that reads a GitHub issue, diagnoses the root cause, and generates a
 
 > Paste a GitHub issue URL → get a `.diff` file you can apply directly to your repo.
 
-**[Live Demo →]([https://your-app.streamlit.app](https://bug-fixer.streamlit.app/))** *(replace with your deployed URL)*
+**[Live Demo →]([https://bug-fixer.streamlit.app])** 
 
 <img width="1911" height="902" alt="image" src="https://github.com/user-attachments/assets/897ca3b5-3ca1-4a3b-9c49-b473ece28436" />
 
